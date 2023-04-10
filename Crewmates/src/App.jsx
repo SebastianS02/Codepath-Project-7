@@ -17,7 +17,7 @@ const App = () => {
       .from('Crewmates')
       .select()
       .order('created_at', { ascending: true })
-      setPosts(data);
+      setCrewmates(data);
     }
     fetchData();
   })
@@ -27,11 +27,11 @@ const App = () => {
   let element = useRoutes([
     {
       path: "/",
-      element:<ReadCrewmates data={posts}/>
+      element:<ReadCrewmates data={crewmates}/>
     },
     {
       path:"/edit/:id",
-      element: <EditCrewmate data={posts} />
+      element: <EditCrewmate data={crewmates} />
     },
     {
       path:"/new",
